@@ -3,7 +3,8 @@
 var app = angular.module('angularSpaceApp', [
     'ngRoute',
     'angularSpaceAppController',
-	'angularSpaceAppServices'
+	'angularSpaceAppServices',
+	'angularSpaceAppDirectives'
 ]);
 
 app.config(['$routeProvider',
