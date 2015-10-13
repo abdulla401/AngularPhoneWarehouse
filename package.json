@@ -1,0 +1,32 @@
+{
+  "description": "AngularSpace",
+  "dependencies": {
+    "chai": "^3.2.0",
+    "express": "~4.0.0",
+    "morgan": "~1.0.0",
+    "body-parser": "~1.0.0",
+    "lodash": "^3.10.0",
+    "method-override": "~1.0.0"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.3.4",
+    "jasmine-reporters": "2.0.6",
+    "jasmine-spec-reporter": "^2.2.3",
+    "karma": "^0.12.37",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.5",
+    "karma-mocha-reporter": "^1.0.2",
+    "mocha": "^2.3.2",
+    "protractor": "^2.1.0",
+    "async": "1.4.2"
+  },
+  "scripts": {
+	"test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node_modules/protractor/bin/webdriver-manager update",
+    "start": "node  server/server.js",
+    "start-nodemon": "nodemon server/server.js",
+    "e2e": "protractor protractor.conf.js",
+    "unit": "karma start karma.conf.js",
+    "server-unit": "mocha test/server/**/*.spec.js"
+  }
+}
