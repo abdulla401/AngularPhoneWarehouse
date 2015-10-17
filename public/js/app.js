@@ -4,7 +4,8 @@ var app = angular.module('angularSpaceApp', [
     'ngRoute',
     'angularSpaceAppController',
 	'angularSpaceAppServices',
-	'angularSpaceAppDirectives'
+	'angularSpaceAppDirectives',
+	'angularSpaceAppFilters'
 ]);
 
 app.config(['$routeProvider',
@@ -12,10 +13,13 @@ app.config(['$routeProvider',
         $routeProvider.
         when('/home', {
             templateUrl: 'partials/home.html',
-            controller: 'MoviesCtrl'
+            controller: 'PhonesController'
+        }). when('/login', {
+            templateUrl: 'partials/login.html',
+            controller: 'LoginController'
         }).
         otherwise({
-            redirectTo: '/home'
+            redirectTo: '/login'
         });
     }
 ]);
