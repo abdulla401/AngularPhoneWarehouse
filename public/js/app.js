@@ -2,6 +2,7 @@
 
 var app = angular.module('angularSpaceApp', [
     'ngRoute',
+	'ngMessages',
     'angularSpaceAppController',
 	'angularSpaceAppServices',
 	'angularSpaceAppDirectives',
