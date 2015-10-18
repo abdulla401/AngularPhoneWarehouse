@@ -18,6 +18,9 @@ app.config(['$routeProvider',
         }). when('/login', {
             templateUrl: 'partials/login.html',
             controller: 'LoginController'
+        }).when('/clock', {
+            templateUrl: 'partials/parentChildDemo.html',
+            controller: 'ParentClockController'
         }).
         otherwise({
             redirectTo: '/login'

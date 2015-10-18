@@ -22,6 +22,7 @@ angularSpaceAppDirectives.directive('ensureUnique', ['$http', function($http) {
           method: 'GET',
           url: '/api/username/check/' + newVal
         }).success(function(data, status, headers, cfg) {
+			myDebugVar = c;
           c.$setValidity('unique', data.isUnique);
         }).error(function(data, status, headers, cfg) {
           c.$setValidity('unique', false);

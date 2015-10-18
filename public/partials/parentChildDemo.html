@@ -1,0 +1,71 @@
+<h4>Parent </h4>
+<div class="row">
+   <div class="col-md-4">
+      <h5> Copy by ref demo </h5>
+      <dl>
+         <dt> Scope Clock.now </dt>
+         <dd> {{clock.now}} </dd>
+         <dt> A copy of clock.now into copy  does not update</dt>
+         <dd> {{copy}} </dd>
+         <dt> A copy of clock object  updates the ref </dt>
+         <dd> {{copyObject.now}} </dd>
+      </dl>
+   </div>
+   <div class="col-md-8">
+      <ul>
+         <li>Suppose you have function <code> Person(a) { this.name = a; } </code></li>
+         <li>You then create <code>x = new Person("sam")</code></li>
+         <li>you make a couple of refs called y as<code> y= x and z = x.name<</code>/li>
+         <li>now x.name and y.name, and z  are all <code>"sam"</code></li>
+         <li>Then later on you set <code>x.name = "july"</code></li>
+         <li>when you check for values again</li>
+         <li>we will have</li>
+         <li>x.name and y.name pointing to "july" where as z is still pointing to "sam" </li>
+      </ul>
+   </div>
+</div>
+   
+   <div class="row">
+      <dl>
+         <dt> A propery directly defined on scope
+         </dt>
+         <dd>
+            <input ng-model="directQuery" placeholder="A new copy is created if edited in child" size="55">
+         </dd>
+         <dt> A property defined on a object on scope
+         </dt>
+         <dd>
+            <input ng-model="model.query" size="55">
+         </dd>
+      </dl>
+   </div>
+</div>
+
+
+<div ng-controller="ClockChildController" style="border: 2px solid red" >
+   <div class="row col-xs-offset-0">
+      <h4>Child </h4>
+      <dl>
+         <dt> Clock.now refering to parent </dt>
+         <dd> {{clock.now}} </dd>
+         <dt> A copy of clock.now into primitive  does not update</dt>
+         <dd> {{copy}} </dd>
+         <dt> A copy of clock object in child updates the ref </dt>
+         <dd> {{childClock.now}} </dd>
+      </dl>
+   </div>
+   <div class="row col-xs-offset-0">
+      <dl>
+         <dt> A reference from chlld to a propery directly defined on scope
+         </dt>
+         <dd>
+            <input ng-model="directQuery" size="55">
+         </dd>
+         <dt>A reference from chlld to a property defined on a object on scope
+         </dt>
+         <dd>
+            <input ng-model="model.query" size="55">
+         </dd>
+      </dl>
+   </div>
+</div>

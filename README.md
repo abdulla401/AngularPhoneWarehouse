@@ -19,9 +19,18 @@ Need to add
 5. $interpolate can be used to evaluate expressions, behaves as liferay templates
 5. when using filters in controller we need to append FilterName 
 6. $locationWatch is present on rootScope
+7. NgModel controller $setValidity method to set custom validation levels -- look at unique directive -- loginForm
+
+
+
 
 How to extract out config into a external javascript file.
 When you have independent single page applications
 
 
 Angular interpolate to create a liferay tempalte views.
+
+
+Go to page http://localhost:8000/#/clock for
+1. parent -- child relation ship 
+2. how a new a property is created on child scope if model object is not used
