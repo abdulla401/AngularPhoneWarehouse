@@ -2,8 +2,8 @@
 var myDebugVar;
 
 //TODO node 2 : use the controlleras directive
-var angularSpaceAppController = angular.module('angularSpaceAppController', [
-	'angularSpaceAppFilters'
+var angularSpaceAppController = angular.module('angularSpaceApp.controller', [
+	'angularSpaceApp.filters'
 ]);
 
 angularSpaceAppController.controller('PhonesController', ['$scope', 'PhoneResource', '$timeout', 'myDateFilter',

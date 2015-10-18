@@ -1,4 +1,4 @@
-var angularSpaceAppFilters = angular.module('angularSpaceAppFilters', []);
+var angularSpaceAppFilters = angular.module('angularSpaceApp.filters', []);
 
 
 angularSpaceAppFilters.filter("myDate", function() {

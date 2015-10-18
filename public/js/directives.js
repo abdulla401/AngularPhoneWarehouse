@@ -1,6 +1,6 @@
 'use strict';
 
-var angularSpaceAppDirectives = angular.module('angularSpaceAppDirectives', []);
+var angularSpaceAppDirectives = angular.module('angularSpaceApp.directives', []);
 
 angularSpaceAppDirectives.directive('neoPhoneDetails', function() {
   return {

@@ -1,7 +1,7 @@
 'use strict';
 
 
-var angularSpaceAppServices = angular.module('angularSpaceAppServices', ['ngResource']);
+var angularSpaceAppServices = angular.module('angularSpaceApp.services', ['ngResource']);
 
 angularSpaceAppServices.factory('PhoneResource', ['$resource',
     function($resource) {

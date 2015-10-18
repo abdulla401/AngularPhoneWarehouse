@@ -3,10 +3,10 @@
 var app = angular.module('angularSpaceApp', [
     'ngRoute',
 	'ngMessages',
-    'angularSpaceAppController',
-	'angularSpaceAppServices',
-	'angularSpaceAppDirectives',
-	'angularSpaceAppFilters'
+    'angularSpaceApp.controller',
+	'angularSpaceApp.services',
+	'angularSpaceApp.directives',
+	'angularSpaceApp.filters'
 ]);
 
 app.config(['$routeProvider',
@@ -27,5 +27,11 @@ app.config(['$routeProvider',
         });
     }
 ]);
+
+
+app.run(function($rootScope) {
+  // use .run to access $rootScope
+  $rootScope.rootProperty = 'root scope';
+})
 
 
