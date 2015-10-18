@@ -44,7 +44,7 @@ router.get('/api/Phones', function(req, res) {
 router.get('/api/username/check/:username', function(req, res) {
 	console.log(req.params.username);
 	if(req.params.username === "abbu"){
-			res.json({data: {isUnique:true}});
+			res.json({isUnique:true});
 	}else{
 		res.json({isUnique:false});
 	}

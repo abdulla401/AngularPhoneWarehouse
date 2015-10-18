@@ -17,17 +17,43 @@ angularSpaceAppDirectives.directive('ensureUnique', ['$http', function($http) {
   return {
     require: 'ngModel',
     link: function(scope, ele, attrs, c) {
-      scope.$watch(attrs.ngModel, function(newVal, oldVal) {
-        $http({
-          method: 'GET',
-          url: '/api/username/check/' + newVal
-        }).success(function(data, status, headers, cfg) {
-			myDebugVar = c;
-          c.$setValidity('unique', data.isUnique);
-        }).error(function(data, status, headers, cfg) {
-          c.$setValidity('unique', false);
-        });
+		
+		scope.$watch(attrs.ngModel, function(newVal, oldVal) {
+			if(newVal == oldVal){
+				//Initialization bit
+			}else{
+			    scope.$evalAsync(function () {
+					console.log("value in $evalAsync: --  "+newVal);
+			        $http({
+			          method: 'GET',
+			          url: '/api/username/check/' + newVal
+			        }).success(function(data, status, headers, cfg) {
+						myDebugVar = c;
+			          c.$setValidity('unique', data.isUnique);
+					}).error(function(data, status, headers, cfg) {
+			          c.$setValidity('unique', false);
+					 });
+			        
+			     });
+			  
+			}
+		
       });
+	  // TODO: try to move the http evalutation outside wath and into evalAsync
+	  scope.$evalAsync(attrs.ngModel, function(value) {
+		  console.log("eval async is called " + value);
+          $http({
+            method: 'GET',
+            url: '/api/username/check/' + value
+          }).success(function(data, status, headers, cfg) {
+  			myDebugVar = c;
+            c.$setValidity('unique', data.isUnique);
+          }).error(function(data, status, headers, cfg) {
+            c.$setValidity('unique', false);
+          });
+	  });
+	  
+	  
     }
   };
 }]);
