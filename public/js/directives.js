@@ -17,24 +17,22 @@ angularSpaceAppDirectives.directive('ensureUnique', ['$http', function($http) {
   return {
     require: 'ngModel',
     link: function(scope, ele, attrs, c) {
-		
+		console.log("link is called");
 		scope.$watch(attrs.ngModel, function(newVal, oldVal) {
 			if(newVal == oldVal){
 				//Initialization bit
 			}else{
-			    scope.$evalAsync(function () {
-					console.log("value in $evalAsync: --  "+newVal);
-			        $http({
-			          method: 'GET',
-			          url: '/api/username/check/' + newVal
-			        }).success(function(data, status, headers, cfg) {
-						myDebugVar = c;
-			          c.$setValidity('unique', data.isUnique);
-					}).error(function(data, status, headers, cfg) {
-			          c.$setValidity('unique', false);
-					 });
+				$http({
+		          method: 'GET',
+		          url: '/api/username/check/' + newVal
+		        }).success(function(data, status, headers, cfg) {
+					myDebugVar = c;
+		          c.$setValidity('unique', data.isUnique);
+				}).error(function(data, status, headers, cfg) {
+		          c.$setValidity('unique', false);
+				 });									
 			        
-			     });
+							     
 			  
 			}
 		
