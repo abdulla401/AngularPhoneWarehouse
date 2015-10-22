@@ -13,17 +13,19 @@ var app = angular.module('angularSpaceApp', [
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('home', {
-        url: '/home',
-        templateUrl: 'partials/home.html',
-		 controller: 'PhonesController'
-    })
     .state('login', {
         url: '/login',
         templateUrl: 'partials/login.html',
 		 controller: 'LoginController'
     })
-    .state('phone.item', {
+	
+    .state('phones', {
+        url: '/phones',
+        templateUrl: 'partials/phones.html',
+		 controller: 'PhonesController'
+    })
+
+    .state('phones.item', {
         url: '/:item',
         templateUrl: 'templates/list.item.html',
         controller: function($scope, $stateParams) {

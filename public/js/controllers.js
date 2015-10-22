@@ -46,7 +46,7 @@ angularSpaceAppController.controller('ClockChildController', ['$scope', '$locati
 angularSpaceAppController.controller('LoginController', ['$scope', '$location',
 	function($scope, $location){
 		$scope.signupForm = function() {
-			$location.path("/home");
+			$location.path("/phones");
 		}
 
 	}]);
