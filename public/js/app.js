@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('angularSpaceApp', [
-    'ngRoute',
+    'ui.router',
 	'ngMessages',
     'angularSpaceApp.controller',
 	'angularSpaceApp.services',
@@ -9,24 +9,30 @@ var app = angular.module('angularSpaceApp', [
 	'angularSpaceApp.filters'
 ]);
 
-app.config(['$routeProvider',
-    function($routeProvider) {
-        $routeProvider.
-        when('/home', {
-            templateUrl: 'partials/home.html',
-            controller: 'PhonesController'
-        }). when('/login', {
-            templateUrl: 'partials/login.html',
-            controller: 'LoginController'
-        }).when('/clock', {
-            templateUrl: 'partials/parentChildDemo.html',
-            controller: 'ParentClockController'
-        }).
-        otherwise({
-            redirectTo: '/login'
-        });
-    }
-]);
+
+
+app.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+    .state('home', {
+        url: '/home',
+        templateUrl: 'partials/home.html',
+		 controller: 'PhonesController'
+    })
+    .state('login', {
+        url: '/login',
+        templateUrl: 'partials/login.html',
+		 controller: 'LoginController'
+    })
+    .state('phone.item', {
+        url: '/:item',
+        templateUrl: 'templates/list.item.html',
+        controller: function($scope, $stateParams) {
+            $scope.item = $stateParams.item;
+         
+        }
+    });
+  $urlRouterProvider.otherwise('login');
+})
 
 
 app.run(function($rootScope) {
