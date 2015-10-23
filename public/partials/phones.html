@@ -1,6 +1,12 @@
 
 <input ng-model="model.query">
 
-<div class="phone-container" ng-repeat="phone in phones"> 
+<div class="phone-container" ng-repeat="phone in phones"    
+		  
+		ng-click="selectItem(phone)"  > 
+		
+		 <a ng-href="#/phones/{{phone.id}}">{{phone.id}}</a> 
    <neo-phone-details phone="phone"/>
 </div>
+
+  <div ui-view class="col-xs-9">Halder {{phone}}</div>

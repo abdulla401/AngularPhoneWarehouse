@@ -14,7 +14,11 @@ angularSpaceAppController.controller('PhonesController', ['$scope', 'PhoneResour
 		$scope.$watch('query', function(oldValue, newValue) {
 			console.log("Search query has changed");
 			
-		})
+		});
+		
+		$scope.selectItem = function(phone){
+			$scope.details = "tulu";
+		}
 
 	
 	}

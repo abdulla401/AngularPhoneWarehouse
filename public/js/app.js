@@ -25,11 +25,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		 controller: 'PhonesController'
     })
 
-    .state('phones.item', {
-        url: '/:item',
-        templateUrl: 'templates/list.item.html',
+    .state('phones.details', {
+        url: '/:details',
+        templateUrl: 'partials/phones.details.html',
         controller: function($scope, $stateParams) {
-            $scope.item = $stateParams.item;
+            $scope.details = $stateParams.details;
          
         }
     });
