@@ -1,0 +1,21 @@
+<p> This is the questions page </p>
+
+<div class="animate-switch-container"
+    ng-switch on="model.question.questionType">
+      <div class="animate-switch" ng-switch-when="text">
+		  <question-text> </question-text>
+	  </div>
+      <div class="animate-switch" ng-switch-when="radio">
+		  <question-option> </question-option>
+	  </div>
+      <div class="animate-switch" ng-switch-default>default</div>
+  </div>
+  
+
+
+
+
+ 
+<p> has more questions:  {{hasMoreQuestions}} </p>
+
+<button type="button"  ng-click="getNext()"  class="btn btn-default" ng-disabled="hasMoreQuestions"> Next </button>

@@ -6,7 +6,8 @@ var app = angular.module('angularSpaceApp', [
     'angularSpaceApp.controller',
 	'angularSpaceApp.services',
 	'angularSpaceApp.directives',
-	'angularSpaceApp.filters'
+	'angularSpaceApp.filters',
+	'angularSpaceApp.questons'
 ]);
 
 
@@ -19,6 +20,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		 controller: 'LoginController'
     })
 	
+    .state('questions', {
+        url: '/questions',
+        templateUrl: 'partials/questions.html',
+		 controller: 'QuestionsController'
+    })
+
     .state('phones', {
         url: '/phones',
         templateUrl: 'partials/phones.html',
