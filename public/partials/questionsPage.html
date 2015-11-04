@@ -1,0 +1,19 @@
+<h2> Survey page </h2>
+ 
+ <div class="animate-switch-container"
+    ng-switch on="model.question.questionType">
+      <div class="animate-switch" ng-switch-when="text">
+		  <question-text> </question-text>
+	  </div>
+      <div class="animate-switch" ng-switch-when="radio">
+		  <question-option q="model.question" m="model.fromDirective()"> </question-option>
+	  </div>
+      <div class="animate-switch" ng-switch-default>default</div>
+  </div> 
+
+
+<button type="button"  ng-click="getNext()"  class="btn btn-default" ng-disabled="!model.showNextButton"> Next </button>
+
+
+
+ 

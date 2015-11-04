@@ -22,7 +22,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 	
     .state('questions', {
         url: '/questions',
-        templateUrl: 'partials/questions.html',
+        templateUrl: 'partials/questionsPage.html',
 		 controller: 'QuestionsController'
     })
 

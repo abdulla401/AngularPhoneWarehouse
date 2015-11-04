@@ -1,1 +1,17 @@
-{{model.question.text}}
+  <h3>{{question.text}}</h3>
+     <label ng-repeat="choice in question.choices">
+       {{choice.text}}
+       <input type="radio"
+              ng-model="question.answer"
+              ng-click="validateAnswer()"
+              ng-value="choice.value"
+              name="favorite">
+     </label>
+     
+     
+  
+     
+     
+     
+    
+     
