@@ -1,6 +1,6 @@
-
-
-var angularSpaceAppQuestionsModule = angular.module('angularSpaceApp.questons', []);
+var angularSpaceAppQuestionsModule = angular.module('angularSpaceApp.questons', [
+                                                           'angularSpaceApp.questons.directives'
+                                                           ]);
 
 angularSpaceAppQuestionsModule.controller('QuestionsController', ['$scope',  'QuestionsFactory' ,
 	function($scope, QuestionsFactory) {
@@ -37,35 +37,7 @@ angularSpaceAppQuestionsModule.factory('QuestionsFactory', ['$resource',
     }
 ]);
 
-angularSpaceAppQuestionsModule.directive("questionText" , function() {
-  return {
-    restrict: 'E',
-    transclude: true,
-    templateUrl: 'partials/directive/textQuestion.html'
-  };
-});
 
-angularSpaceAppQuestionsModule.directive("questionOption" , function() {
-  return {
-    restrict: 'E',
-    transclude: true,
-    scope: {
-    	question: "=q",
-    	updatedParent: "&m"
-    },
-    controller: ['$scope', function($scope) {
-    	$scope.validateAnswer = function() {
-    		$scope.question.validAnswer = true;
-    		$scope.updatedParent();
-    		}
-    	$scope.saveAnswer = function() {
-    		alert("This is the time to answer the question");
-    	}
-    ;
-    }],
-    templateUrl: 'partials/directive/optionQuestion.html'
-  };
-});
 
 
 var questions = [
