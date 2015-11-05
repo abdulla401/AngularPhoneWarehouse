@@ -1,0 +1,21 @@
+This is checkbox questions
+
+  <h3>{{question.text}}</h3>
+     <label ng-repeat="choice in question.choices">
+       {{choice.text}}
+       <input type="checkbox"
+              ng-model="choice.isChecked"
+              ng-click="validateAnswer()"
+              ng-value="choice.value"
+              name="favorite">
+     </label>
+     
+     question -- {{question}}
+     
+     
+  
+     
+     
+     
+    
+     
