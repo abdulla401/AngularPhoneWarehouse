@@ -7,3 +7,41 @@
 	background: #5bc0de !important;
 	
 }
+
+.boxa{height:90px; background:red}
+.boxb{height:45px; background:blue}
+.boxc{height: 35px; background:green}
+@media (max-width: 600px) {
+    #boots-logo-panel {background: red}
+    .show_bottom_understand { display: block }
+    .show_tsop_understand { display: none }
+    .landingPanelHeight{height: 20%}
+    .videoHeight{height: 75vw}
+    .by-video-player iframe {width: 100%;min-height: 100vh; max-height: 100vh;}
+}
+@media (min-width: 601px) and  (max-width: 1280px)  {
+    #boots-logo-panel {background: blue}
+    .show_bottom_understand { display: none }
+    .show_top_understand { display: block }
+    .landingPanelHeight{height: 45%;}
+    .diabetes-consul-img{height: 150px; width: 100px}
+    .videoHeight{height: 412px;}
+    .by-video-player iframe {width: 100%;min-height: 100vh; max-height: 100vh;}
+    .landing_page_info_content{ height: 100px;}
+    .info-panel{max-width: 548px}
+    .addressPanel1{max-width: 548px}
+}
+@media(min-width:1281px) {
+   #boots-logo-panel {background: green}
+  .show_bottom_understand { display: none }
+  .show_top_understand { display: block }
+  .lg-no-padding-top {padding-top: 0px !important}
+  .lg-no-margin-top {margin-top: 0px !important}
+  .diabetes-consul-img{height: 160px; width: 100px}
+  .videoHeight{height: 412px;}
+  .by-video-player iframe {width: 100%;min-height: 100vh; max-height: 100vh;}
+  .landing_page_info_content{ height: 140px;}
+  .info-panel{max-width: 548px}
+  .addressPanel1{max-width: 548px}
+}
+

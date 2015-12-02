@@ -1,0 +1,26 @@
+input ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength
+input ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength
+input ng-valid-maxlength ng-dirty ng-valid-parse ng-touched ng-valid-required ng-valid-minlength ng-valid ng-valid-pattern
+
+
+//      if(postcode.length == 0){
+//        $scope.donationForm.$setUntouched();
+//  postCodeSearchForm.postcode.$setUntouched()
+//      }
+
+http://dev.virtualearth.net/REST/V1/Imagery/Map/Road/51.948154024%2C-0.279246947/13?mapSize=559,300&format=gif&pushpin=51.948154024,-0.279246947;64;<span>Boots%20(61.00%20Miles)<span>&pushpin=51.948154024,-0.279246947;64;Boots&pushpin=51.948154024,-0.279246947;64;Boots&key=sHT9y7joHdv5d69WZ4RL~CBu_LIE2LTtRfCu5atT-pA~ApdMrSoUAL_Nbl0bjZJLPg4W4JiGQ6NPjNaGlfJIAsDYLbuwSqGHy8rXR2u8TZDO
+
+ ! # $ % & ' * + - / = ? ^ _ ` { | } ~
+ 
+  !#$%&'*+-/=?^_`{|}~
+  
+  
+  Aafd3%!#$%&'*+@-/=?^_`{|}~!+@gmail.com!#$%&'*+-/=?^_`{|}~
+  
+  
+  This cehckin is before demo -- git cehckout 3cb37a13a8bb242989a40b128f073beec683a69e
+This checkin is after demo  --  git cehckout 53a1598a0528b047c430063959d6ca0db21f569e
+This file was commited before the demo
+~/Work/angular-projects/hcd-frontend/app/styles$ls -l common.css 
+-rw-r--r--  1 abdullasyed  staff  7956 23 Nov 09:24 common.css
+But was not pushed in

@@ -1596,12 +1596,12 @@ pre code {
 }
 @media (min-width: 600px) {
   .container {
-    width: 736px;
+    width: 732px;
   }
 }
 @media (min-width: 1280px) {
   .container {
-    width: 956px;
+    width: 1128px;
   }
 }
 @media (min-width: 1440px) {
