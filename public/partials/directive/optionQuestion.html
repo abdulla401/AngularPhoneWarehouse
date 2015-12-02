@@ -1,4 +1,5 @@
   <h3>{{question.text}}</h3>
+ 
      <label ng-repeat="choice in question.choices">
        {{choice.text}}
        <input type="radio"
@@ -12,6 +13,9 @@
   
      
      
-     
+     -- use $setValidity in form controller
+     -- use ngtouched to show the message -- can use the count to show the maximum to be touched
+     -- use ngtouched invalid to show warning colours
+     --
     
      

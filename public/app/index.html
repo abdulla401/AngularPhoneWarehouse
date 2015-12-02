@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html ng-app="hdcApp" class="no-js"  lang="en" ng-cloak>
+<head>
+    <!--if app is in sub virtual directory-->
+    <!--<base href="/appName/">-->
+
+    <!--if app is at root-->
+    <!-- <base href="/">-->
+    <meta charset="utf-8">
+    <title>Health Diabetes Coach</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+
+    <!-- Use Internet Explorer 9 Standards mode -->
+    <meta http-equiv="x-ua-compatible" content="IE=9">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+
+    <link rel="stylesheet" type="text/css" href="styles/common.css">
+    <link rel="stylesheet" type="text/css" href="styles/fonts.css">
+    <!--<link rel="stylesheet" type="text/css" href="styles/model-dialog.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="styles/main.css" media="screen and (min-width: 769px)">-->
+    <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <!-- media="only screen and (max-width: 768px)">-->
+
+    <link rel="stylesheet" type="text/css" href="styles/video.css">
+    <link rel="stylesheet" type="text/css" href="styles/landing-page.css">
+    <link rel="stylesheet" type="text/css" href="styles/store-locator.css">
+
+
+    <!--<link rel="stylesheet" type="text/css" href="bower_components/ngDialog/css/ngDialog.css">-->
+    <link rel="stylesheet" type="text/css" href="bower_components/ngDialog/css/ngDialog.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/ngDialog/css/ngDialog-theme-default.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/ngDialog/css/ngDialog-theme-plain.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/ngDialog/css/ngDialog-custom-width.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/ngDialog/css/ngdialog-theme-video.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-scroll/ng-scrollbar.min.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/ng_dialog.css">
+    <!-- endbuild -->
+    <!--ipad debug script -->
+    <!--<script src="http://192.168.122.6:8080/target/target-script-min.js#a"></script>-->
+</head>
+<body class="text-center" >
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<!--<div class="global-container">-->
+
+<script type="text/ng-template" id="errormessageNetwork">
+
+    <div class="errorpage">
+        <h1>{{ngDialogData.heading}}</h1>
+        <!--  <h5>{{ngDialogData.message}}</h5> -->
+        <p>Sorry, there's been a glitch </p>
+
+        <p>We know this is frustrating and we're working hard to sort it out speedily.</p>
+
+        <p>Please try back later or go to <a ng-click="holdingpage();" style="color: #9f60a8;">Health Diabetes Coach</a>
+        </p>
+
+        <p><a ng-click="holdingpage();" class="backbut">
+            <span class="glyphicon glyphicon-menu-left" id="menuleft"></span>Continue</a></p>
+    </div>
+</script>
+
+<div class="row" ng-include src="'views/header.html'" style="padding-bottom:16px;"></div>
+
+<div ui-view class="ng-scope"></div>
+<footer>
+    <div class="container footer" ng-include src="'views/footer.html'"></div>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.min.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
+<![endif]-->
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-touch/angular-touch.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-ui-mask/dist/mask.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/angular-scroll/ng-scrollbar.min.js"></script>
+<script src="bower_components/angular-filter/dist/angular-filter.min.js"></script>
+<script src="bower_components/ngDialog/js/ngDialog.min.js"></script>
+<!-- load ngmessages -->
+
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<!--vendor/external js modules start-->
+<script src="vendor/js/dist/lodash.min.js"></script>
+<script src="vendor/js/dist/moment.min.js"></script>
+<script src="vendor/js/customExceptionHandler.js"></script>
+<script src="vendor/js/youtube-Player-Video.js"></script>
+<script src="vendor/js/jquery.easing.1.3.js"></script>
+<script src="vendor/js/jquery.quicksand.js"></script>
+<script src="vendor/js/jquery-animate-css-rotate-scale.js"></script>
+<script src="vendor/js/jquery-css-transform.js"></script>
+<script src="vendor/js/quicksand.js"></script>
+<script src="vendor/js/os_detect.js"></script>
+<script src="vendor/js/tai-placeholder.js"></script>
+<script src="vendor/js/svg-converter.js"></script>
+<script src="vendor/js/angular-messages.js"></script>
+
+<!--vendor/external js modules end-->
+
+<!--app & config -->
+<script src="scripts/app.js"></script>
+<script src="scripts/config.js"></script>
+<script src="scripts/config-loading.js"></script>
+<!--factories -->
+<script src="scripts/factories/staticDataFactory.js"></script>
+<script src="scripts/factories/errorMessages.js"></script>
+
+<!--directives-->
+<script src="scripts/directives/isReady.js"></script>
+<script src="vendor/js/jquery.mCustomScrollbar.js"></script>
+<script src="vendor/js/dist/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="scripts/directives/byVideoPlayer.js"></script>
+<script src="scripts/directives/svgImage.js"></script>
+
+<!-- Controllers -->
+<script src="scripts/controllers/landingPageCtrl.js"></script>
+<script src="scripts/controllers/navigationCtrl.js"></script>
+<script src="scripts/controllers/storeLocatorCtrl.js"></script>
+<script src="scripts/controllers/ngDialogCtrl.js"></script>
+
+<!-- <script src="bower_components/fancybox/jquery.fancybox.js"></script> -->
+<script src="vendor/js/jquery.fancybox.js"></script>
+<!-- Coremetrics Analytics Start-->
+<script type="text/javascript" src="vendor/js/coremetrics-eluminate.js"></script>
+
+<!-- endbuild -->
+</body>
+</html>

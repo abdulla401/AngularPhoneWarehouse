@@ -31,6 +31,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'partials/phones.html',
 		 controller: 'PhonesController'
     })
+     .state('layout', {
+        url: '/layout',
+        templateUrl: 'partials/layout.html' 
+    })
 
     .state('phones.details', {
         url: '/:details',
