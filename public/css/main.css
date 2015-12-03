@@ -8,9 +8,9 @@
 	
 }
 
-.boxa{height:90px; background:red}
-.boxb{height:45px; background:blue}
-.boxc{height: 35px; background:green}
+.boxa{height:auto; background:red}
+.boxb{height:auto; background:blue}
+.boxc{height: auto; background:green}
 @media (max-width: 600px) {
     #boots-logo-panel {background: red}
     .show_bottom_understand { display: block }
