@@ -45,3 +45,23 @@
   .addressPanel1{max-width: 548px}
 }
 
+::-webkit-input-placeholder {
+    color: #2E8E9F;
+    font-family: 'VAG Rounded Light';
+    font-size: 16px;
+    /*color (before typing): #5DA6B4
+color (after typing): #2E8E9F*/
+
+    letter-spacing: 1.5px;
+}
+
+::-moz-placeholder {
+    color: #2E8E9F;
+    font-family: 'VAG Rounded Light';
+    font-size: 16px;
+    /*color (before typing): #5DA6B4
+color (after typing): #2E8E9F*/
+
+    letter-spacing: 1.5px;
+}
+
