@@ -1,5 +1,5 @@
 'use strict';
-
+console.log("tiger");
 var app = angular.module('angularSpaceApp', [
     'ui.router',
 	'ngMessages',
@@ -34,6 +34,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
      .state('layout', {
         url: '/layout',
         templateUrl: 'partials/layout.html' 
+    })
+     .state('directives', {
+        url: '/directives',
+        templateUrl: 'partials/directives.html',
+        controller: 'DirectivesController'
     })
 
     .state('phones.details', {
