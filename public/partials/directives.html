@@ -1,5 +1,21 @@
-Hello This is the directives page
+Hello This is what the directives page <br>
+
 
 {{height}}
 
-<imperial-height ng-model='height'/>
+<form name="unitsForm">
+{{unitsForm.length.$error}}
+<imperial-height ng-model='height' name="length"></imperial-height>
+<div  ng-messages="unitsForm.length.$error" role="alert">
+    <div  ng-message="feets">Feets are not valid</div>
+    <div  ng-message="inches">Inches are not valid</div>
+</div>
+        
+
+<hr> <hr> 
+
+{{heightM2}}
+
+<imperial-height ng-model='heightM2' name="width"></imperial-height>
+</form>
+

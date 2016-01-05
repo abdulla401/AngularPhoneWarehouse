@@ -60,6 +60,7 @@ angularSpaceAppController.controller('DirectivesController', ['$scope', '$locati
 	function($scope, $location){
 		console.log("directives controller called");
 		$scope.height = 182;
+		$scope.heightM2 = 155;
 		$scope.signupForm = function() {
 			$location.path("/phones");
 		}

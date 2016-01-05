@@ -3,10 +3,11 @@ var angularSpaceAppDirectives = angular.module('angularSpaceApp.directives', [])
 angularSpaceAppDirectives.directive('imperialHeight', function() {
 	return {
 		restrict: 'E',
-		template: '<div> hello  tiger {{imperialFeets}} dog-tears </div>\
-		            <input type="text" ng-model="imperialFeets"/> \
-		             <input type="text" ng-model="imperialInches"/> ',
+		template: '<div>\
+		            <input type="text" ng-model="imperialFeets"> \
+		             <input type="text" ng-model="imperialInches"/> </div>',
 		require: 'ngModel',
+		scope: {},
 		link: function(scope, element, attrs, ngModelCtrl){
 		    
 		    ngModelCtrl.$formatters.push(function(modelValue) {
@@ -30,6 +31,15 @@ angularSpaceAppDirectives.directive('imperialHeight', function() {
                 var ret = parseInt(viewValue.imperialFeets*12)+parseInt(viewValue.imperialInches);
                 return Math.round(ret*2.54);
             });
+
+            ngModelCtrl.$validators.feets = function(viewValue, viewValue){
+               var ret =  (parseInt(viewValue.imperialFeets) > 10);
+                return !ret;
+            }
+             ngModelCtrl.$validators.inches = function(viewValue, viewValue){
+               var ret =  (parseInt(viewValue.imperialInches) > 11);
+                return !ret;
+            }
 		}
 	}
 })
