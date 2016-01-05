@@ -4,6 +4,21 @@ Hello This is what the directives page <br>
 {{height}}
 
 <form name="unitsForm">
+<div>
+<input type="text" ng-model="drName" name="doctor" ng-minlength="2"  ng-maxlength="10" 
+ng-pattern="/^0[0-9]*$/" required></input>
+<div class="hcd-text-box__add-on">Dr</div>
+</div>
+
+<div  ng-messages="unitsForm.doctor.$error" role="alert">
+    <div  ng-message="required">required -- doctors name is requird</div>
+    <div  ng-message="pattern">pattern -- doctors name cannot contain numbers</div>
+    <div  ng-message="minlength">minlength -- doctors name should be atleast 2 chars</div>
+    <div  ng-message="maxlength">maxlength -- doctors name should not contain more than 10 charecters</div>
+</div>
+
+{{unitsForm.doctor.$error}}
+<hr>
 {{unitsForm.length.$error}}
 <imperial-height ng-model='height' name="length"></imperial-height>
 <div  ng-messages="unitsForm.length.$error" role="alert">
