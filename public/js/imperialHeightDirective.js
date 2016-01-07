@@ -43,3 +43,36 @@ angularSpaceAppDirectives.directive('imperialHeight', function() {
 		}
 	}
 })
+
+
+angularSpaceAppDirectives.directive('checkBox', function() {
+	return {
+		restrict: 'E',
+		template: '<div>\
+		            <a href="" ng-click="clicked()" ng-class="chee"> -- {{name}} -- {{checked}}</a> \
+		              </div>',
+		require: 'ngModel',
+		scope: {},
+		link: function(scope, element, attrs, ngModelCtrl){
+		    scope.name  = attrs.name;
+		   ngModelCtrl.$render = function() {
+                scope.checked = ngModelCtrl.$viewValue ;
+                
+            };  
+          
+			
+			scope.clicked = function()  {
+				if(scope.checked === 'YES'){
+					scope.checked = 'NO';
+					scope.chee = 'boxb';
+				}else{
+					scope.checked = 'YES';
+					scope.chee = 'boxa';
+				}
+				ngModelCtrl.$setViewValue(scope.checked);
+			}
+         
+ 
+		}
+	}
+})

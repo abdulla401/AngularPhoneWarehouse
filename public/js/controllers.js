@@ -65,4 +65,43 @@ angularSpaceAppController.controller('DirectivesController', ['$scope', '$locati
 			$location.path("/phones");
 		}
 
-	}]);	
+	}]);
+
+angularSpaceAppController.controller('FormScopeDemoController', ['$scope', '$location',
+	function($scope, $location){
+		var form = this;
+		form.status = "ON";
+		form.data = [{
+            "id": "COND_HBP",
+            "name": "High blood pressure",
+            "description": "a long term condition",
+            "isHeader": false,
+            "sortOrder": 10
+        }, {
+                "id": "COND_CHOL",
+                "name": "High cholesterol",
+                "description": "a long term condition ",
+                "isHeader": false,
+                "toggle": "YES",
+                "sortOrder": 30
+            }, {
+                "id": "COND_COPD",
+                "name": "COPD",
+                "description": "Pulmonary diseases ",
+                "isHeader": false,
+                "toggle": "NO",
+                "sortOrder": 40
+            }, {
+                "id": "COND_OTH",
+                "name": "Other",
+                "description": "Any Other Condition",
+                "isHeader": false,
+                "sortOrder": 60,
+                "toggle": "YES",
+            }];
+		console.log("form controller called");
+		$scope.signupForm = function() {
+			$location.path("/phones");
+		}
+
+	}]);		

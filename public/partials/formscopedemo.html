@@ -1,0 +1,19 @@
+hello  
+
+
+<div  ng-repeat="condition in form.data">
+
+
+Field  <input type="checkbox" ng-model="condition.toggle" ng-true-value="'YES'" ng-false-value="'NO'"
+           name="{{condition.id}}"> </input>
+{{condition.toggle}} -- <check-box name="{{condition.id}}" ng-model="condition.toggle"></check-box>  
+
+
+</div>
+
+
+
+outside --  {{form.status}}
+<check-box name="verma11" ng-model="form.status"></check-box>  
+<hr>
+{{form.data}}

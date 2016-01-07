@@ -40,6 +40,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'partials/directives.html',
         controller: 'DirectivesController'
     })
+    .state('formscopedemo', {
+        url: '/formscopedemo',
+        templateUrl: 'partials/formscopedemo.html',
+        controller: 'FormScopeDemoController',
+        controllerAs: 'form',
+    })
 
     .state('phones.details', {
         url: '/:details',
