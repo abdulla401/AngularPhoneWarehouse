@@ -1,0 +1,21 @@
+{
+  "name": "AngularPhoneWarehouse",
+  "description": "AngularSpace",
+  "main": "",
+  "authors": [
+    "Abdulla Syed <asyed@mimecast.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/abdulla401/AngularPhoneWarehouse",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1"
+  }
+}
