@@ -7,7 +7,8 @@ var app = angular.module('angularSpaceApp', [
 	'angularSpaceApp.services',
 	'angularSpaceApp.directives',
 	'angularSpaceApp.filters',
-	'angularSpaceApp.questons'
+	'angularSpaceApp.questons',
+    'wizardModule'
 ]);
 
 
@@ -19,7 +20,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'partials/login.html',
 		 controller: 'LoginController'
     })
-	
+
     .state('questions', {
         url: '/questions',
         templateUrl: 'partials/questionsPage.html',
@@ -31,9 +32,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'partials/phones.html',
 		 controller: 'PhonesController'
     })
+      .state('phones.details', {
+          url: '/:details',
+          templateUrl: 'partials/phones.details.html',
+          controller: function($scope, $stateParams) {
+              $scope.details = $stateParams.details;
+
+          }
+      })
      .state('layout', {
         url: '/layout',
-        templateUrl: 'partials/layout.html' 
+        templateUrl: 'partials/layout.html'
     })
      .state('directives', {
         url: '/directives',
@@ -45,16 +54,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'partials/formscopedemo.html',
         controller: 'FormScopeDemoController',
         controllerAs: 'form',
-    })
-
-    .state('phones.details', {
-        url: '/:details',
-        templateUrl: 'partials/phones.details.html',
-        controller: function($scope, $stateParams) {
-            $scope.details = $stateParams.details;
-         
-        }
     });
+
+
   $urlRouterProvider.otherwise('login');
 })
 
@@ -62,6 +64,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
 app.run(function($rootScope) {
   // use .run to access $rootScope
   $rootScope.rootProperty = 'root scope';
+  $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+  	console.log(toState);
+  });
 })
 
 
