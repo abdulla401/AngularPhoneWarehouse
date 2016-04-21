@@ -1,0 +1,13 @@
+<div class="mc-select__container col-xs-12" ng-class="customClass ? customClass : ''" name="{{::name}}">
+    <div class="mc-label col-xs-6" ng-class="!label ? 'mc-label--hidden' : ''">{{::label}}</div>
+    <div class="mc-select__field col-xs-6">
+        <select data-ng-model="_inputModel" ng-change="saveValue()" class="mc-select__field">
+            <optgroup data-ng-repeat="sourceGrp in selectOptions track by $index" label="{{sourceGrp.name}}">
+                <option data-ng-repeat="dataSource in sourceGrp.sources track by $index" label="{{dataSource}}" >
+                    {{dataSource}}
+                </option>
+            </optgroup>
+        </select>
+    </div>
+</div>
+

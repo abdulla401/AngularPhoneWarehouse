@@ -41,6 +41,13 @@ router.get('/api/Phones', function(req, res) {
       res.json(Phones);
 });
 
+router.get('/api/datasources', function(req, res) {
+    res.json([
+        {"id":1, "name": "Office 365", "sources":["Office 365-1", "Office 365-usa", "Office 365-new"]},
+        {"id":2, "name": "Exchange T", "sources":["Exchane New York 1", "Super hybrid", "Exchange webservices source 1"]}
+    ]);
+});
+
 router.get('/api/username/check/:username', function(req, res) {
 	console.log(req.params.username);
 	if(req.params.username === "abbu"){
@@ -48,7 +55,7 @@ router.get('/api/username/check/:username', function(req, res) {
 	}else{
 		res.json({isUnique:false});
 	}
-      
+
 });
 
 router.get('/api/phones/search=:search&page=:page&items=:items', function(req, res) {

@@ -8,7 +8,8 @@ var app = angular.module('angularSpaceApp', [
 	'angularSpaceApp.directives',
 	'angularSpaceApp.filters',
 	'angularSpaceApp.questons',
-    'wizardModule'
+    'wizardModule',
+    'formElements'
 ]);
 
 

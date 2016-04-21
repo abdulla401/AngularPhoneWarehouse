@@ -13,8 +13,11 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
+    less = require('gulp-less'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
+    path = require('path'),
+    print = require('gulp-print'),
+cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     del = require('del');
 var wiredep = require('wiredep').stream;
@@ -89,11 +92,22 @@ gulp.task('default', ['clean'], function() {
     gulp.start('styles', 'scripts', 'images');
 });
 
+
+gulp.task('less', function () {
+    return gulp.src('./public/js/**/*.less')
+        .pipe(print())
+        .pipe(less())
+        .pipe(concat('custom.css'))
+        .pipe(gulp.dest('./public/css'));
+});
+
 // Watch
 gulp.task('watch', function() {
 
     // Watch .scss files
     gulp.watch('src/styles/**/*.scss', ['styles']);
+
+    gulp.watch('./public/js/**/*.less', ['less']);
 
     // Watch .js files
     gulp.watch('src/scripts/**/*.js', ['scripts']);
