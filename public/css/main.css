@@ -5,7 +5,7 @@
 .phone-container:nth-of-type(even) .phone-details{
 
 	background: #5bc0de !important;
-	
+
 }
 
 .boxa{height:auto; background:red}
@@ -63,5 +63,9 @@ color (after typing): #2E8E9F*/
 color (after typing): #2E8E9F*/
 
     letter-spacing: 1.5px;
+}
+
+.margin-left-11{
+    margin-left:11px;
 }
 

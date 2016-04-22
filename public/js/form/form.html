@@ -6,4 +6,23 @@ Welcome to form page
 <neo-ds-select label="Hellos" data-ng-model="f.flag" select-Options="f.dataSources">
     Puts content here {{f.flag}}
 </neo-ds-select>
-now -- {{f.flag}} --
+flag -- {{f.flag}} -- <br/>
+
+toggle -- {{f.buttonSelected}}
+
+
+<div class="ng-scope" style="
+    width: 30px;
+    height: 20px;
+    background: red;
+    border-radius: 15px;
+">
+<button style="
+    height: 20px;
+    border-radius: 15px;
+    background-color: grey;
+    border: 1px transparent;
+    width: 20px;
+    outline: none;
+" ng-class="{'margin-left-11': f.buttonSelected }" ng-click="f.toggleButton()"></button>
+</div>

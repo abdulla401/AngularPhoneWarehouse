@@ -8,8 +8,25 @@ angular.module("formElements",['formComponents'])
             });
     }])
     .controller("FormController", ["$scope", function ($scope) {
-        console.log("form controller is here");
+        console.log("form controller is here --");
         var f = this;
-        f.flag = "**-!()!-**"
-        
+
+        f.flag = "**-!(ooo)!-**";
+        f.buttonSelected = false;
+        f.toggleButton = function(){
+            if(!f.buttonSelected){
+                f.buttonSelected = true;
+            }else{
+                f.buttonSelected = false;
+            }
+
+        };
+
+        f.papa = "fas";
+
+        f.papa.aler = "Afa";
+
+//         return f;
+
+
     }])
