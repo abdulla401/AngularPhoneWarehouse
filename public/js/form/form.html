@@ -1,28 +1,40 @@
-Welcome to form page
+<form class="form-horizontal">
+    <div class="form-group">
+        <label> Selective directive with groups</label>
+        <div class="form-control">
+            <neo-ds-select label="Hellos" data-ng-model="f.flag" select-Options="f.dataSources">
+                Puts content here {{f.flag}}
+            </neo-ds-select>
+        </div>
+    </div>
 
-<br />
+    <div class="form-group">
+        <div>
+            <label> Toggle button</label>
+            <div class="form-control">
+                <div class="ng-scope" style="width: 30px;height: 20px;background: red;border-radius: 15px;">
+                    <button style="height: 20px;border-radius: 15px;background-color: grey;border: 1px transparent;width: 20px;outline: none;"
+                            ng-class="{'margin-left-11': f.buttonSelected }" ng-click="f.toggleButton()"></button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        </div>
+    </div>
+</form>
 
-<neo-ds-select label="Hellos" data-ng-model="f.flag" select-Options="f.dataSources">
-    Puts content here {{f.flag}}
-</neo-ds-select>
-flag -- {{f.flag}} -- <br/>
-
-toggle -- {{f.buttonSelected}}
-
-
-<div class="ng-scope" style="
-    width: 30px;
-    height: 20px;
-    background: red;
-    border-radius: 15px;
-">
-<button style="
-    height: 20px;
-    border-radius: 15px;
-    background-color: grey;
-    border: 1px transparent;
-    width: 20px;
-    outline: none;
-" ng-class="{'margin-left-11': f.buttonSelected }" ng-click="f.toggleButton()"></button>
+<div class="col-xs-2">
+    toggle -- {{f.buttonSelected}}
 </div>
+
+
+
+
+
+
+
