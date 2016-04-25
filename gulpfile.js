@@ -17,7 +17,8 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     path = require('path'),
     print = require('gulp-print'),
-cache = require('gulp-cache'),
+    cache = require('gulp-cache'),
+    eslint = require('gulp-eslint'),
     livereload = require('gulp-livereload'),
     del = require('del');
 var wiredep = require('wiredep').stream;
@@ -101,6 +102,23 @@ gulp.task('less', function () {
         .pipe(gulp.dest('./public/css'));
 });
 
+gulp.task('lint', function () {
+    // ESLint ignores files with "node_modules" paths.
+    // So, it's best to have gulp ignore the directory as well.
+    // Also, Be sure to return the stream from the task;
+    // Otherwise, the task may end before the stream has finished.
+    return gulp.src(['./public/js/**/*.js','!node_modules/**'])
+        // eslint() attaches the lint output to the "eslint" property
+        // of the file object so it can be used by other modules.
+        .pipe(eslint())
+        // eslint.format() outputs the lint results to the console.
+        // Alternatively use eslint.formatEach() (see Docs).
+        .pipe(eslint.format())
+        // To have the process exit with an error code (1) on
+        // lint error, return the stream and pipe to failAfterError last.
+        .pipe(eslint.failAfterError());
+});
+
 // Watch
 gulp.task('watch', function() {
 
@@ -108,6 +126,8 @@ gulp.task('watch', function() {
     gulp.watch('src/styles/**/*.scss', ['styles']);
 
     gulp.watch('./public/js/**/*.less', ['less']);
+
+    gulp.watch('./public/js/**/*.js', ['lint']);
 
     // Watch .js files
     gulp.watch('src/scripts/**/*.js', ['scripts']);
