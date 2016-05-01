@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <h3 class="modal-title">I'm a modal!</h3>
+</div>
+<div class="modal-body">
+    <ul class="nav nav-tabs">
+        <li role="presentation" ng-class="{active: vm.activeTab=='localGrps'}">
+            <a href ng-click="vm.activateTab('localGrps')">Local Groups</a></li>
+        <li role="presentation" ng-class="{active: vm.activeTab=='adGrps'}">
+            <a href ng-click="vm.activateTab('adGrps')">Active Directory Groups</a></li>
+
+    </ul>
+    <ul>
+        {{vm}}
+        this is active tab -- {{vm.activeTab=='local'}} -- tiger -- {{vm.activeTab}}
+        {{tt.man}}
+        <div ng-if="vm.activeTab=='localGrps'">
+            local Group body
+        </div>
+        <div ng-if="vm.activeTab=='adGrps'">
+            Active Directory body
+        </div>
+    </ul>
+    Selected: <b>{{ selected.item }}</b>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.toggleTab()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>
