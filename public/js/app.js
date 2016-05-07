@@ -22,14 +22,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'partials/login.html',
 		 controller: 'LoginController'
     })
-
-    .state('questions', {
-        url: '/questions',
-        templateUrl: 'partials/questionsPage.html',
-		 controller: 'QuestionsController'
-    })
-
-    .state('phones', {
+   .state('phones', {
         url: '/phones',
         templateUrl: 'partials/phones.html',
 		 controller: 'PhonesController'
