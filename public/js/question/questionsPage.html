@@ -1,0 +1,75 @@
+<h2>Survey page {{model.question.questionType}}</h2>
+
+<div class="animate-switch-container" ng-switch
+	on="model.question.questionType">
+	<div class="animate-switch" ng-switch-when="text">
+		<question-text> </question-text>
+	</div>
+	<div class="animate-switch" ng-switch-when="radio">
+		<question-radio q="model.question" m="model.fromDirective()">
+		</question-radio>
+	</div>
+	<div class="animate-switch" ng-switch-when="checkbox">
+	Helo	<question-checkbox q="model.question" m="model.fromDirective()">
+		</question-checkbox>
+	</div>
+	<div class="animate-switch" ng-switch-default>default</div>
+</div>
+
+
+
+  <form name="form22" class="css-form" novalidate>
+    Name:
+    <input type="text" ng-model="user.name" name="uName" required="" />
+    <br />
+    <div ng-show="form.$submitted || form.uName.$touched">
+      <div ng-show="form.uName.$error.required">Tell us your name.</div>
+    </div>
+
+    E-mail:
+    <input type="email" ng-model="user.email" name="uEmail" required="" />
+    <br />
+    <div ng-show="form.$submitted || form.uEmail.$touched">
+      <span ng-show="form.uEmail.$error.required">Tell us your email.</span>
+      <span ng-show="form.uEmail.$error.email">This is not a valid email.</span>
+    </div>
+
+    Gender:
+    <input type="radio" ng-model="user.gender" value="male" name="gender" />male
+    <input type="radio" ng-model="user.gender" value="female" name="gender" />female
+    <br />
+    <input type="checkbox" ng-model="user.agree" name="userAgree" required="" />
+
+    I agree:
+    <input ng-show="user.agree" type="text" ng-model="user.agreeSign" required="" />
+    <br />
+    <div ng-show="form.$submitted || form.userAgree.$touched">
+      <div ng-show="!user.agree || !user.agreeSign">Please agree and sign.</div>
+    </div>
+
+    <input type="button" ng-click="reset(form)" value="Reset" />
+    <input type="submit" ng-click="update(user)" value="Save" />
+  </form>
+  <pre>user = {{user | json}}</pre>
+  <pre>master = {{master | json}}</pre>
+
+
+<button type="button" ng-click="getNext()" class="btn btn-default"
+	ng-disabled="!model.showNextButton">Next</button>
+	
+	
+	
+	
+	<p> new line </p>
+
+	
+	
+	<div ng-repeat="store in storesFound">
+		<p> {{store}} </p>
+		-- {{currentPostCode}} -- tiger<p ng-if="store.indexOf(currentPostCode) > -1"> --- found </p>
+	</div>
+	
+	
+
+
+
