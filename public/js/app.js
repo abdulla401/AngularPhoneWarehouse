@@ -60,7 +60,6 @@ app.run(function($rootScope) {
   // use .run to access $rootScope
   $rootScope.rootProperty = 'root scope';
   $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-  	console.log(toState);
   });
 })
 

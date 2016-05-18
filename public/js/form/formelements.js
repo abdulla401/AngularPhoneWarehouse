@@ -1,4 +1,4 @@
-angular.module("formElements",['formComponents'])
+angular.module("formElements",['formComponents', 'frapontillo.bootstrap-switch'])
     .config(['$stateProvider', function($stateProvider) {
         $stateProvider
             .state('form-elements', {
@@ -13,6 +13,7 @@ angular.module("formElements",['formComponents'])
 
         f.flag = "**-!(ooo)!-**";
         f.buttonSelected = false;
+        f.toggleSwith = true;
         f.toggleButton = function(){
             if(!f.buttonSelected){
                 f.buttonSelected = true;
@@ -24,7 +25,31 @@ angular.module("formElements",['formComponents'])
 
         f.papa = "fas";
 
-        f.papa.aler = "Afa";
+        $scope.mytime = new Date();
+
+        $scope.hstep = 1;
+        $scope.mstep = 15;
+
+        $scope.options = {
+            hstep: [1, 2, 3],
+            mstep: [1, 5, 10, 15, 25, 30]
+        };
+
+        $scope.ismeridian = true;
+        $scope.toggleMode = function() {
+            $scope.ismeridian = ! $scope.ismeridian;
+        };
+
+        $scope.update = function() {
+            var d = new Date();
+            d.setHours( 14 );
+            d.setMinutes( 0 );
+            $scope.mytime = d;
+        };
+
+        $scope.changed = function () {
+            $log.log('Time changed to: ' + $scope.mytime);
+        };
 
 //         return f;
 

@@ -1,7 +1,13 @@
 .mydirective {
-  min-width: 400px;
-  background: green;
+  max-width: 700px;
+  background: white;
   border: 5px solid;
+}
+.mydog {
+  color: blue;
+}
+.mydog.file {
+  font-weight: 800;
 }
 
 .service {
