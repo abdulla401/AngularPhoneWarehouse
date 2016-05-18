@@ -21,6 +21,7 @@ var gulp = require('gulp'),
     eslint = require('gulp-eslint'),
     livereload = require('gulp-livereload'),
     del = require('del');
+var browserSync = require('browser-sync').create();
 var wiredep = require('wiredep').stream;
 var inject = require('gulp-inject');
 
@@ -123,22 +124,30 @@ gulp.task('lint', function () {
 gulp.task('watch', function() {
 
     // Watch .scss files
-    gulp.watch('src/styles/**/*.scss', ['styles']);
+    //gulp.watch('src/styles/**/*.scss', ['styles']);
 
     gulp.watch('./public/js/**/*.less', ['less']);
 
-    gulp.watch('./public/js/**/*.js', ['lint']);
+    //gulp.watch('./public/js/**/*.js', ['lint']);
 
     // Watch .js files
-    gulp.watch('src/scripts/**/*.js', ['scripts']);
+    //gulp.watch('src/scripts/**/*.js', ['scripts']);
 
     // Watch image files
-    gulp.watch('src/images/**/*', ['images']);
+    //gulp.watch('src/images/**/*', ['images']);
 
     // Create LiveReload server
-    livereload.listen();
+    //livereload.listen();
+     // Watch any files in dist/, reload on change
+    //gulp.watch(['dist/**']).on('change', livereload.changed);
 
-    // Watch any files in dist/, reload on change
-    gulp.watch(['dist/**']).on('change', livereload.changed);
-
+    //using browser sync
+    //browserSync({server: './public'});
+    browserSync.init({
+        server: "./public"
+    });
+    gulp.watch("public/**/*.html").on('change', browserSync.reload);
+    gulp.watch('public/css/*.css', function() {
+        gulp.src('public/css/*.css').pipe(browserSync.stream());
+    });
 });

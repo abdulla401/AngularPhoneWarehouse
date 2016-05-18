@@ -1,3 +1,8 @@
+.mydirective {
+  min-width: 400px;
+  background: green;
+  border: 5px solid;
+}
 
 .service {
   margin: 10px;
