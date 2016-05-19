@@ -1,0 +1,33 @@
+<table class="my-uib-timepicker">
+    <tbody>
+
+    <tr>
+        <td class="form-group  myhours" ng-class="{'has-error': invalidHours}">
+            <div class="input-group">
+            <input type="text" placeholder="HH" ng-model="hours" ng-change="updateHours()" class="form-control text-center"
+                   ng-readonly="::readonlyInput" maxlength="2" tabindex="{{::tabindex}}" ng-disabled="noIncrementHours()" ng-blur="blur()">
+
+               <span class="input-group-addon" id="basic-addon2">
+                <a ng-click="decrementHours()" ng-class="{disabled: noDecrementHours()}" ng-disabled="noDecrementHours()" tabindex="0" style="position: relative;top: 7px;left: 10px;"><span class="glyphicon glyphicon-chevron-down"></span></a>
+                <a ng-click="incrementHours()" ng-class="{disabled: noIncrementHours()}" ng-disabled="noIncrementHours()" tabindex="0" style="position: relative;top: -7px;left: -7px;"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            </span>
+
+                </div>
+        </td>
+        <td class="uib-separator">:</td>
+        <td class="form-group  myhours" ng-class="{'has-error': invalidMinutes}">
+            <div class="input-group">
+            <input type="text" placeholder="MM" ng-model="minutes" ng-change="updateMinutes()" class="form-control text-center"
+                   ng-readonly="::readonlyInput" maxlength="2" tabindex="{{::tabindex}}" ng-disabled="noIncrementMinutes()" ng-blur="blur()">
+                  <span class="input-group-addon" id="basic-addon2">
+                <a ng-click="incrementMinutes()" ng-class="{disabled: noDecrementHours()}" ng-disabled="noDecrementHours()" tabindex="0" style="position: relative;top: 7px;left: 10px;"><span class="glyphicon glyphicon-chevron-down"></span></a>
+                <a ng-click="decrementMinutes()" ng-class="{disabled: noIncrementHours()}" ng-disabled="noIncrementHours()" tabindex="0" style="position: relative;top: -7px;left: -7px;"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            </span>
+
+            </div>
+        </td>
+
+    </tr>
+
+    </tbody>
+</table>

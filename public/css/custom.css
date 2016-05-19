@@ -1,13 +1,40 @@
-.mydirective {
-  max-width: 700px;
-  background: white;
-  border: 5px solid;
+.tiger {
+  font-size: 24px;
 }
-.mydog {
-  color: blue;
+.mx-daterange-picker {
+  border: 0px solid red;
+  line-height: 1.4;
+  width: 620px;
+  padding: 1px;
 }
-.mydog.file {
-  font-weight: 800;
+.mx-daterange-picker div {
+  float: left;
+  border: 0px solid green;
+}
+.mx-daterange-picker__timeselect {
+  width: 205px;
+}
+.mx-daterange-picker__timeselect--selectwarn {
+  border: 1px solid red;
+  border-radius: 0px;
+}
+.mx-daterange-picker__seperator {
+  width: 12px;
+  padding-left: 4px;
+}
+.mx-daterange-picker__fromlabel {
+  width: 65px;
+  padding: 0px 5px;
+  text-align: right;
+}
+.mx-daterange-picker__tolabel {
+  width: 30px;
+  padding: 0px 5px;
+  text-align: right;
+}
+.my-uib-timepicker .myhours input {
+  width: 38px;
+  color: red;
 }
 
 .service {

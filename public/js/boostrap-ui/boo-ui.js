@@ -49,6 +49,16 @@ angular.module("bStrapModule", ['ui.bootstrap'])
             console.log("Cancel called");
             dismiss();
             var i = 22;
-        
+
         };
-}]);
+}]) .config(['$provide', Decorate]);
+
+function Decorate($provide) {
+    $provide.decorator('uibTimepickerDirective', function($delegate) {
+        var directive = $delegate[0];
+
+        directive.templateUrl = "js/form/components/customUibTimePicker.tpl.html";
+
+        return $delegate;
+    });
+}
