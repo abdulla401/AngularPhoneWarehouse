@@ -8,7 +8,7 @@
   width: 620px;
   padding: 1px;
   & div {
-    float:left;
+    float: left;
     border: 0px solid green;
   }
 
@@ -16,24 +16,25 @@
 
   }
 
-  &__timeselect{
+  &__timeselect {
     width: 205px;
-    &--selectwarn{
+    &--selectwarn {
       border: 1px solid red;
       border-radius: 0px;
     }
   }
-  &__seperator{
+  &__seperator {
     width: 12px;
     padding-left: 4px;
   }
-  &__fromlabel{
-    width: 65px;
+  &__fromlabel {
+    width: 63px;
+    float: left;
     padding: 0px 5px;
     text-align: right;
   }
 
-  &__tolabel{
+  &__tolabel {
     width: 30px;
     padding: 0px 5px;
     text-align: right;
@@ -44,5 +45,37 @@
   .myhours input {
     width: 38px;
     color: red;
+  }
+}
+
+.task-container {
+  min-width: 758px;
+  max-width: 962px;
+  border: 1px solid blue;
+  height: 32px;
+  &__icon {
+    width: 10%;
+    float: left;
+  }
+  &__icon-image{
+    background-color: red;
+    background-image: url("http://localhost:3000/assets/ews.png");
+    height: 40px;
+  }
+  &__desc {
+    width: 30%;
+    float: left;
+  }
+  &__status {
+    width: 20%;
+    float: left;
+  }
+  &__details {
+    width: 20%;
+    float: left;
+  }
+  &__link {
+    width: 20%;
+    float: left;
   }
 }

@@ -36,6 +36,35 @@
   width: 38px;
   color: red;
 }
+.task-container {
+  min-width: 768px;
+  max-width: 962px;
+  border: 1px solid blue;
+  height: 32px;
+}
+.task-container__icon {
+  width: 10%;
+  float: left;
+}
+.task-container__icon-image {
+  background-color: red;
+}
+.task-container__desc {
+  width: 30%;
+  float: left;
+}
+.task-container__status {
+  width: 20%;
+  float: left;
+}
+.task-container__details {
+  width: 20%;
+  float: left;
+}
+.task-container__link {
+  width: 20%;
+  float: left;
+}
 
 .service {
   margin: 10px;
