@@ -24,7 +24,9 @@ angular.module('backuprestore.mk-input.directive', [])
                 externalMessage: "@"
             },
             link: function($scope, $element, $attrs, ngModelCtrl) {
-
+                    $scope.mkChange = function(){
+                        console.log("The value has changed");
+                    }
             }
         };
     }]);

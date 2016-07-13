@@ -1,13 +1,13 @@
 <ng-form name="former">
     <div class="mk-form">
-        <label class="mk-label" >
+        <label class="mk-label">
             {{label}}
         </label>
         <input class="mk-input" type="text" ng-model="ngModel" name="element"
                ng-minlength="{{::mkMinLength}}"
                ng-maxlength="{{::mkMaxLength}}"
                ng-required="{{::mkRequired}}"
-               ng-pattern="{{::mkPattern}}"/>
+               ng-pattern="mkPattern"/>
     </div>
     <div class="mk-error-messages">
         <!--{{former.element.$touched}}-->
@@ -19,4 +19,6 @@
             <div ng-message="maxlength">Your field is too long</div>
         </div>
     </div>
+
+
 </ng-form>
