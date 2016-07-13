@@ -1,22 +1,35 @@
 Welcome to components page
+<div class="otherForm">
+    <form name="lasmanos">
+        <mk-input name="finger1" ng-model="vm.finger1" label="digitsonly"
+                  mk-required="false"
+                  mk-min-length="3"
+                  mk-pattern="1\d+"
+        ></mk-input>
 
-<form name="lasmanos">
-    <mk-input name="finger1" ng-model="vm.finger1" label="digitsonly"
-              mk-required="false"
-              mk-min-length="3"
-              mk-pattern="1\d+"
-              ></mk-input>
+        <mk-input name="verma" ng-model="vm.finger2"
+                  mk-required="true"
+                  mk-max-length="7"
+                  label="FatheringR"></mk-input>
 
-    <mk-input name="verma" ng-model="vm.finger2"
-              mk-required="true"
-              mk-max-length="7"
-              label="FatheringR"></mk-input>
+        <ng-form name="subform">
+            <mk-input name="finder3" ng-model="vm.finger3"
+                      mk-required="true"
+                      mk-max-length="3"
+                      label="Finger 3"></mk-input>
+            - subform valid -- {{lasmanos.subform.$valid}} <br/>
+            - subform touched -- {{lasmanos.subform.$touched}} -- getting this touciness outside is still a problem <br/>
+        </ng-form>
 
-
-valid form -- {{lasmanos.$valid}} <br>
-finger1 form -- {{lasmanos.finger1}} <br>
-</form>
+        valid form -- {{lasmanos.$valid}} <br>
+        verma touched -- {{lasmanos.verma.$touched}} <br>
+        <!--valid form &#45;&#45; {{lasmanos}} <br>-->
+        <!--finger1 form &#45;&#45; {{lasmanos.finger1}} <br>-->
+    </form>
+</div>
 
 
 finger1 -- {{vm.finger1}} <br>
 finger2 -- {{vm.finger2}} <br>
+
+

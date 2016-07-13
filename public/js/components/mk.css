@@ -8,8 +8,8 @@
 
 .mk-input {
     position: relative;
-    width: 90%;
-    margin-left: 15%;
+    width: 60%;
+    margin: 0;
     padding: 16px;
     background: #eaf3f5;
     border: 0;
@@ -22,9 +22,9 @@
 .mk-label {
     padding: 32px 10px 16px 16px;
     width: 30%;
-    color: blue;
+    color: #72808d;
     font: 400 16px "Helvetica Neue", sans-serif;
-    text-align: left;
+    text-align: right;
 }
 
 .mk-form {
@@ -34,3 +34,4 @@
 .mk-error-messages {
     padding-left: 32%;
 }
+

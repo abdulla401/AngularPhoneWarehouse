@@ -1,7 +1,7 @@
 <ng-form name="former">
     <div class="mk-form">
         <label class="mk-label" >
-            -- {{label}} --
+            {{label}}
         </label>
         <input class="mk-input" type="text" class="form-control" ng-model="ngModel" name="element"
                ng-minlength="{{::mkMinLength}}"
@@ -10,7 +10,8 @@
                ng-pattern="{{::mkPattern}}"/>
     </div>
     <div class="mk-error-messages">
-        <div ng-messages="former.element.$touched && former.element.$error" style="color:maroon" role="alert">
+        <!--{{former.element.$touched}}-->
+        <div ng-messages="former.element.$touched && former.element.$error" role="alert">
             <div ng-message="pattern">Not the right pattern</div>
             <div ng-message="required">You did not enter a field</div>
             <div ng-message="minlength">Your field is too short</div>
