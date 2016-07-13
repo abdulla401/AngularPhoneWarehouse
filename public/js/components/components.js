@@ -1,4 +1,4 @@
-angular.module("components",['backuprestore.mk-input.directive'])
+angular.module("components",['backuprestore.mk-input.directive', 'backuprestore.mk-select.directive'])
     .config(['$stateProvider', function($stateProvider) {
         $stateProvider
             .state('components', {
@@ -10,4 +10,11 @@ angular.module("components",['backuprestore.mk-input.directive'])
     .controller("ComponentsController", ["$scope", function ($scope) {
         var vm = this;
         vm.adminUrl = "test";
+        vm.mobilePattern = "/\d+/";
+        vm.options = [
+            {id:'x', value:"please Select"},
+            {id:'ews', value:"EWS"},
+            {id:'O365', value:"0365"}
+        ];
+        vm.dstype = 'x';
     }])

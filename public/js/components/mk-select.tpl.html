@@ -3,11 +3,14 @@
         <label class="mk-label" >
             {{label}}
         </label>
-        <input class="mk-input" type="text" ng-model="ngModel" name="element"
-               ng-minlength="{{::mkMinLength}}"
-               ng-maxlength="{{::mkMaxLength}}"
-               ng-required="{{::mkRequired}}"
-               ng-pattern="{{::mkPattern}}"/>
+
+        <select class="mk-input" ng-model="ngModel">
+            <option data-ng-repeat="option in options track by $index"
+                    value="{{option.id}}"
+                        > {{option.value}} -- {{option.selected}}
+            </option>
+        </select>
+
     </div>
     <div class="mk-error-messages">
         <!--{{former.element.$touched}}-->

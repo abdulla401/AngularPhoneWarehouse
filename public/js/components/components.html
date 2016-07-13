@@ -1,6 +1,11 @@
 Welcome to components page
 <div class="otherForm">
+    {{vm.dstype}}
     <form name="lasmanos">
+        <mk-select name="selec" label="Select the source" ng-model="vm.dstype"
+                   options="vm.options"
+                   default-text="Please select a datasource"
+        ></mk-select>
         <mk-input name="finger1" ng-model="vm.finger1" label="Mobile Number"
                   mk-required="false"
                   mk-min-length="3"
@@ -18,8 +23,10 @@ Welcome to components page
                       mk-max-length="3"
                       label="Data Source type"></mk-input>
             - subform valid -- {{lasmanos.subform.$valid}} <br/>
-            - subform touched -- {{lasmanos.subform.$touched}} -- getting this touciness outside is still a problem <br/>
+            - subform touched -- {{lasmanos.subform.$touched}} -- getting this touciness outside is still a problem
+            <br/>
         </ng-form>
+
 
         valid form -- {{lasmanos.$valid}} <br>
         verma touched -- {{lasmanos.verma.$touched}} <br>
