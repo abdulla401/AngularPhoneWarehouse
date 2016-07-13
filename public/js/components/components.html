@@ -1,1 +1,22 @@
 Welcome to components page
+
+<form name="lasmanos">
+    <mk-input name="finger1" ng-model="vm.finger1" label="digitsonly"
+              mk-required="false"
+              mk-min-length="3"
+              mk-pattern="1\d+"
+              ></mk-input>
+
+    <mk-input name="verma" ng-model="vm.finger2"
+              mk-required="true"
+              mk-max-length="7"
+              label="FatheringR"></mk-input>
+
+
+valid form -- {{lasmanos.$valid}} <br>
+finger1 form -- {{lasmanos.finger1}} <br>
+</form>
+
+
+finger1 -- {{vm.finger1}} <br>
+finger2 -- {{vm.finger2}} <br>

@@ -1,4 +1,4 @@
-angular.module("components",[])
+angular.module("components",['backuprestore.mk-input.directive'])
     .config(['$stateProvider', function($stateProvider) {
         $stateProvider
             .state('components', {
@@ -7,7 +7,7 @@ angular.module("components",[])
                 controller: 'ComponentsController as vm'
             });
     }])
-    .controller("components", ["$scope", function ($scope) {
+    .controller("ComponentsController", ["$scope", function ($scope) {
         var vm = this;
         vm.adminUrl = "test";
     }])
