@@ -1,4 +1,9 @@
 Welcome to components page
+<script type="text/ng-template" id="adcon-messages">
+    <div ng-message="required">Adcon field is required</div>
+    <div ng-message="minlength">Adcon field is too short</div>
+</script>
+
 <div class="otherForm">
     {{vm.dstype}}
     <form name="lasmanos">
@@ -10,11 +15,13 @@ Welcome to components page
                   mk-required="false"
                   mk-min-length="3"
                   mk-pattern="1\d+"
+                  external-message="adcon-messages"
         ></mk-input>
 
         <mk-input name="verma" ng-model="vm.finger2"
                   mk-required="true"
                   mk-max-length="7"
+                  external-message="adcon-messages"
                   label="Data Source Name"></mk-input>
 
         <ng-form name="subform">

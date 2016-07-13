@@ -20,7 +20,8 @@ angular.module('backuprestore.mk-input.directive', [])
                 mkRequired: "@",
                 mkMinLength: "@",
                 mkMaxLength:"@",
-                mkPattern:"@"
+                mkPattern:"@",
+                externalMessage: "@"
             },
             link: function($scope, $element, $attrs, ngModelCtrl) {
 
