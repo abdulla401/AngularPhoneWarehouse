@@ -10,7 +10,8 @@ var app = angular.module('angularSpaceApp', [
 	'angularSpaceApp.questons',
     'wizardModule',
     'formElements',
-    'bStrapModule'
+    'bStrapModule',
+    'components'
 ]);
 
 
