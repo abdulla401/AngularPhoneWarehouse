@@ -1,27 +1,40 @@
 Welcome to components page
 <script type="text/ng-template" id="adcon-messages">
-    <div ng-message="required">Adcon field is required</div>
-    <div ng-message="minlength">Adcon field is too short</div>
+    <div ng-message="integer">Adcondefault Integer message</div>
+    <div ng-message="required">Adcondefault You did not enter a field</div>
+    <div ng-message="minlength">Adcondefault Your field is too short</div>
+    <div ng-message="maxlength">Adcondefault Your field is too long</div>
+</script>
+
+
+<script type="text/ng-template" id="default-comp-messages">
+    <div ng-message="pattern">default Not the right pattern</div>
+    <div ng-message="integer">default Integer message</div>
+    <div ng-message="required">default You did not enter a field</div>
+    <div ng-message="minlength">default Your field is too short</div>
+    <div ng-message="maxlength">default Your field is too long</div>
 </script>
 
 <div class="otherForm">
     <form name="manos">
-        <ng-form name="fieldWrapper1">
+        <!--<ng-form name="fieldWrapper1">-->
 
-        <mk-comp ng-model="vm.eldedo1"
-                 mk-label="First Name"
-                 name="dedo1" call-parent="vm.parenter()"
-                 mk-minlength="4"
-                 mk-maxlength="7"
-                 mk-validator="integer"
-                 mk-pattern="4\d+"
-        ></mk-comp>
+            <mk-comp ng-model="vm.eldedo1"
+                     mk-label="First Name"
+                     name="dedo1" call-parent="vm.parenter()"
+                     mk-required="true"
+                     mk-minlength="4"
+                     mk-maxlength="7"
+                     mk-validator="integer"
+                     mk-pattern="4\d+"
+                     mk-custom-message="adcon-messages"
+            ></mk-comp>
 
-        </ng-form>
+        <!--</ng-form>-->
         <mk-comp ng-model="vm.eldedo2"
                  mk-label="Last Name"
                  name="dedo1"
-                 mk-max-length="3"
+                 mk-maxlength="3"
 
         ></mk-comp>
 

@@ -11,6 +11,7 @@
     </div>
     <div class="mk-error-messages">
         <!--{{former.element.$touched}}-->
+        {{former.element.$error}}
         <div ng-messages="former.element.$touched && former.element.$error" style="color:maroon" role="alert">
             <div ng-if="externalMessage" ng-messages-include="{{::externalMessage}}"></div>
             <div ng-message="pattern">Not the right pattern</div>

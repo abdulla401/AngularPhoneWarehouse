@@ -26,6 +26,7 @@ angular.module("components").component('mkComp', {
         mkMaxlength: "@",
         mkValidator: "@",
         mkPattern:"@",
-        callParent: "&"
+        callParent: "&",
+        mkCustomMessage: "@"
     }
 });

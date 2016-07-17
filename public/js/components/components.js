@@ -1,4 +1,4 @@
-var INTEGER_REGEXP = /^\-?\d+$/;
+
 angular.module("components",['backuprestore.mk-input.directive', 'backuprestore.mk-select.directive'])
     .config(['$stateProvider', function($stateProvider) {
         $stateProvider
