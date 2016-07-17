@@ -18,7 +18,7 @@ angular.module("components",['backuprestore.mk-select.directive'])
             {id:'ews', value:"EWS"},
             {id:'O365', value:"0365"}
         ];
-        vm.dstype = 'x';
+        //vm.dstype = 'x';
         vm.parenter = function() {
             console.log('parent function');
         }

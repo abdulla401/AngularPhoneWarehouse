@@ -41,6 +41,13 @@ Welcome to components page
 
         ></mk-input>
 
+
+        <mk-select name="selec" label="Select the source" ng-model="vm.dstype"
+                   options="vm.options"
+                   mk-required="true"
+                   default-text="Please select a datasource"
+        ></mk-select>
+
         form valid -- {{manos.$valid}} <br>
         form submitted -- {{manos.$submitted}} <br>
         fieldWrapper1 --- {{manos.fieldWrapper1.$valid}} <br>
@@ -51,10 +58,7 @@ Welcome to components page
     <!--&#45;&#45;does not &#45;&#45; come out &#45;&#45;    {{vm.eldedo1}}-->
 
     <form name="lasmanos">
-        <mk-select name="selec" label="Select the source" ng-model="vm.dstype"
-                   options="vm.options"
-                   default-text="Please select a datasource"
-        ></mk-select>
+
         <mk-input name="finger1" ng-model="vm.finger1" mk-label="Mobile Number"
                   mk-required="false"
                   mk-min-length="3"

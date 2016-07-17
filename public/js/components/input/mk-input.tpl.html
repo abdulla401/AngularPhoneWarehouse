@@ -1,4 +1,4 @@
-<ng-form name="former">
+<ng-form name="localform">
     <div class="mk-form">
         <label class="mk-label">
             {{::$ctrl.mkLabel}} -- {{::$ctrl.mkRequired}}
@@ -12,10 +12,10 @@
                ng-blur="$ctrl.updateValue()"/>
     </div>
     <div class="mk-error-messages">
-        <!--{{former.element.$touched}}-->
+        <!--{{localform.element.$touched}}-->
         <!--&#45;&#45; {{$ctrl.parentform.$submitted}} &#45;&#45;-->
-        <!--&#45;&#45;{{former.element.$error}}&#45;&#45;-->
-        <div ng-messages="($ctrl.parentform.$submitted || former.element.$touched )&& former.element.$error"
+        <!--&#45;&#45;{{localform.element.$error}}&#45;&#45;-->
+        <div ng-messages="($ctrl.parentform.$submitted || localform.element.$touched )&& localform.element.$error"
              style="color:maroon" role="alert">
             <div ng-if="$ctrl.mkCustomMessage" ng-messages-include="{{::$ctrl.mkCustomMessage}}"></div>
             <div ng-messages-include="default-comp-messages"></div>

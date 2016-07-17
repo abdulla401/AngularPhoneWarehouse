@@ -1,20 +1,20 @@
-<ng-form name="former">
+<ng-form name="localform">
     <div class="mk-form">
         <label class="mk-label" >
-            {{label}}
+            {{::$ctrl.label}}
         </label>
 
-        <select class="mk-input" ng-model="ngModel">
-            <option data-ng-repeat="option in options track by $index"
+        <select class="mk-input" ng-model="$ctrl.ngModel" ng-required="{{::$ctrl.mkRequired}}">
+            <option data-ng-repeat="option in $ctrl.options track by $index"
                     value="{{option.id}}"
-                        > {{option.value}} -- {{option.selected}}
+                        > {{option.value}}
             </option>
         </select>
 
     </div>
     <div class="mk-error-messages">
-        <!--{{former.element.$touched}}-->
-        <div ng-messages="former.element.$touched && former.element.$error" style="color:maroon" role="alert">
+
+        <div ng-messages="($ctrl.parentform.$submitted || localform.element.$touched )&& localform.element.$error">
             <div ng-message="pattern">Not the right pattern</div>
             <div ng-message="required">You did not enter a field</div>
             <div ng-message="minlength">Your field is too short</div>
