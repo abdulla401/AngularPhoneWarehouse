@@ -5,7 +5,35 @@ Welcome to components page
 </script>
 
 <div class="otherForm">
-    {{vm.dstype}}
+    <form name="manos">
+        <ng-form name="fieldWrapper1">
+
+        <mk-comp ng-model="vm.eldedo1"
+                 mk-label="First Name"
+                 name="dedo1" call-parent="vm.parenter()"
+                 mk-minlength="4"
+                 mk-maxlength="7"
+                 mk-validator="integer"
+                 mk-pattern="4\d+"
+        ></mk-comp>
+
+        </ng-form>
+        <mk-comp ng-model="vm.eldedo2"
+                 mk-label="Last Name"
+                 name="dedo1"
+                 mk-max-length="3"
+
+        ></mk-comp>
+
+        form valid -- {{manos.$valid}} <br>
+        form submitted -- {{manos.$submitted}} <br>
+        fieldWrapper1 --- {{manos.fieldWrapper1.$valid}} <br>
+        field1 -- {{manos.dedo1.$valid}} <br>
+
+        <input type="submit" value="Save"/>
+    </form>
+    <!--&#45;&#45;does not &#45;&#45; come out &#45;&#45;    {{vm.eldedo1}}-->
+
     <form name="lasmanos">
         <mk-select name="selec" label="Select the source" ng-model="vm.dstype"
                    options="vm.options"

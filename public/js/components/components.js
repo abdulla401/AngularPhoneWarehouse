@@ -1,3 +1,4 @@
+var INTEGER_REGEXP = /^\-?\d+$/;
 angular.module("components",['backuprestore.mk-input.directive', 'backuprestore.mk-select.directive'])
     .config(['$stateProvider', function($stateProvider) {
         $stateProvider
@@ -9,7 +10,8 @@ angular.module("components",['backuprestore.mk-input.directive', 'backuprestore.
     }])
     .controller("ComponentsController", ["$scope", function ($scope) {
         var vm = this;
-        vm.adminUrl = "test";
+        vm.adminUrl = "abdulla";
+        vm.eldedo1 = "ha";
         vm.mobilePattern = "/\d+/";
         vm.options = [
             {id:'x', value:"please Select"},
@@ -17,4 +19,8 @@ angular.module("components",['backuprestore.mk-input.directive', 'backuprestore.
             {id:'O365', value:"0365"}
         ];
         vm.dstype = 'x';
+        vm.parenter = function() {
+            console.log('parent function');
+        }
     }])
+

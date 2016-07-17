@@ -1,0 +1,29 @@
+<ng-form name="former">
+    <div class="mk-form">
+        <label class="mk-label">
+            {{::$ctrl.mkLabel}}
+        </label>
+        <input class="mk-input" type="text" ng-model="$ctrl.ngModel"
+               name="element"
+               ng-minlength="{{::$ctrl.mkMinlength}}"
+               ng-maxlength="{{::$ctrl.mkMaxlength}}"
+               ng-required="{{::$ctrl.mkRequired}}"
+               ng-pattern="{{::$ctrl.mkPattern}}"
+               mk-validators="{{$ctrl.mkValidator}}"
+               ng-blur="$ctrl.updateValue()"/>
+    </div>
+    <div class="mk-error-messages">
+        <!--{{former.element.$touched}}-->
+        <!--&#45;&#45; {{$ctrl.parentform.$submitted}} &#45;&#45;-->
+        <!--&#45;&#45;{{former.element.$error}}&#45;&#45;-->
+        <div ng-messages="($ctrl.parentform.$submitted || former.element.$touched )&& former.element.$error"
+             style="color:maroon" role="alert">
+            <div ng-if="externalMessage" ng-messages-include="{{::externalMessage}}"></div>
+            <div ng-message="pattern">Not the right pattern</div>
+            <div ng-message="integer">Integer message</div>
+            <div ng-message="required">You did not enter a field</div>
+            <div ng-message="minlength">Your field is too short</div>
+            <div ng-message="maxlength">Your field is too long</div>
+        </div>
+    </div>
+</ng-form>
