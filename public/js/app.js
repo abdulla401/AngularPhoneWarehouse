@@ -3,6 +3,7 @@ console.log("tiger");
 var app = angular.module('angularSpaceApp', [
     'ui.router',
 	'ngMessages',
+    'ngMaterial',
     'angularSpaceApp.controller',
 	'angularSpaceApp.services',
 	'angularSpaceApp.directives',
