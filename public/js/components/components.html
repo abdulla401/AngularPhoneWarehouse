@@ -22,7 +22,7 @@ Welcome to components page
         Include sensitive messages
         </md-checkbox> -- {{data.cb1}}
 
-            <mk-comp ng-model="vm.eldedo1"
+            <mk-input ng-model="vm.eldedo1"
                      mk-label="First Name"
                      name="dedo1" call-parent="vm.parenter()"
                      mk-required="true"
@@ -31,15 +31,15 @@ Welcome to components page
                      mk-validator="integer"
                      mk-pattern="4\d+"
                      mk-custom-message="adcon-messages"
-            ></mk-comp>
+            ></mk-input>
 
         <!--</ng-form>-->
-        <mk-comp ng-model="vm.eldedo2"
+        <mk-input ng-model="vm.eldedo2"
                  mk-label="Last Name"
                  name="dedo1"
                  mk-maxlength="3"
 
-        ></mk-comp>
+        ></mk-input>
 
         form valid -- {{manos.$valid}} <br>
         form submitted -- {{manos.$submitted}} <br>
@@ -55,7 +55,7 @@ Welcome to components page
                    options="vm.options"
                    default-text="Please select a datasource"
         ></mk-select>
-        <mk-input name="finger1" ng-model="vm.finger1" label="Mobile Number"
+        <mk-input name="finger1" ng-model="vm.finger1" mk-label="Mobile Number"
                   mk-required="false"
                   mk-min-length="3"
                   mk-pattern="4\d+"
@@ -66,13 +66,13 @@ Welcome to components page
                   mk-required="true"
                   mk-max-length="7"
                   external-message="adcon-messages"
-                  label="Data Source Name"></mk-input>
+                  mk-label="Data Source Name"></mk-input>
 
         <ng-form name="subform">
             <mk-input name="finder3" ng-model="vm.finger3"
                       mk-required="true"
                       mk-max-length="3"
-                      label="Data Source type"></mk-input>
+                      mk-label="Data Source type"></mk-input>
             - subform valid -- {{lasmanos.subform.$valid}} <br/>
             - subform touched -- {{lasmanos.subform.$touched}} -- getting this touciness outside is still a problem
             <br/>

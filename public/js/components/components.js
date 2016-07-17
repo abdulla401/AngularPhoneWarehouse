@@ -1,5 +1,5 @@
 
-angular.module("components",['backuprestore.mk-input.directive', 'backuprestore.mk-select.directive'])
+angular.module("components",['backuprestore.mk-select.directive'])
     .config(['$stateProvider', function($stateProvider) {
         $stateProvider
             .state('components', {

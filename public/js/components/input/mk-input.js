@@ -9,8 +9,8 @@ function MyController() {
 
 }
 
-angular.module("components").component('mkComp', {
-    templateUrl: 'js/components/components/mk-components.tpl.html',
+angular.module("components").component('mkInput', {
+    templateUrl: 'js/components/input/mk-input.tpl.html',
      controller: MyController,
     require: {
         model: 'ngModel',
