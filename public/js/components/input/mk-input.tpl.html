@@ -1,18 +1,19 @@
 <ng-form name="localform">
     <div class="mk-form">
         <label class="mk-label">
-            {{::$ctrl.mkLabel}} -- {{::$ctrl.mkRequired}}
+            {{::$ctrl.mkLabel}} -- {{::$ctrl.mkFormDisabled}}
         </label>
         <input class="mk-input" type="text" ng-model="$ctrl.ngModel"
                name="element"
                ng-minlength="{{::$ctrl.mkMinlength}}"
                ng-maxlength="{{::$ctrl.mkMaxlength}}"
                ng-required="{{::$ctrl.mkRequired}}"
+               ng-disabled="$ctrl.mkDisabled"
                mk-validators="{{$ctrl.mkValidator}}"
                ng-blur="$ctrl.updateValue()"/>
     </div>
     <div class="mk-error-messages">
-        <!--{{localform.element.$touched}}-->
+        --{{localform.element.$pristine}}--
         <!--&#45;&#45; {{$ctrl.parentform.$submitted}} &#45;&#45;-->
         <!--&#45;&#45;{{localform.element.$error}}&#45;&#45;-->
         <div ng-messages="($ctrl.parentform.$submitted || localform.element.$touched )&& localform.element.$error"

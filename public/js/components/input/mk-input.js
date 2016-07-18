@@ -26,6 +26,7 @@ angular.module("components").component('mkInput', {
         mkMaxlength: "@",
         mkValidator: "@",
         mkPattern:"@",
+        mkDisabled: "=",
         callParent: "&",
         mkCustomMessage: "@"
     }

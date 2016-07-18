@@ -1,4 +1,4 @@
-Welcome to components page
+    Welcome to components page
 <script type="text/ng-template" id="adcon-messages">
     <div ng-message="integer">Adcondefault Integer message</div>
     <div ng-message="required">Adcondefault You did not enter a field</div>
@@ -18,9 +18,9 @@ Welcome to components page
 <div class="otherForm">
     <form name="manos">
         <!--<ng-form name="fieldWrapper1">-->
-       --  <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+       --  <md-checkbox ng-model="vm.formdisabled" aria-label="Checkbox 1">
         Include sensitive messages
-        </md-checkbox> -- {{data.cb1}}
+        </md-checkbox> -- {{vm.formdisabled}}
 
             <mk-input ng-model="vm.eldedo1"
                      mk-label="First Name"
@@ -30,6 +30,7 @@ Welcome to components page
                      mk-maxlength="7"
                      mk-validator="integer"
                      mk-pattern="4\d+"
+                     mk-disabled="vm.formdisabled"
                      mk-custom-message="adcon-messages"
             ></mk-input>
 
@@ -53,7 +54,7 @@ Welcome to components page
         fieldWrapper1 --- {{manos.fieldWrapper1.$valid}} <br>
         field1 -- {{manos.dedo1.$valid}} <br>
 
-        <input type="submit" value="Save"/>
+        <input type="submit" value="Save" ng-click="vm.formdisabled=false"/>
     </form>
     <!--&#45;&#45;does not &#45;&#45; come out &#45;&#45;    {{vm.eldedo1}}-->
 

@@ -13,6 +13,7 @@ angular.module("components",['backuprestore.mk-select.directive'])
         vm.adminUrl = "abdulla";
         vm.eldedo1 = "ha";
         vm.mobilePattern = "/\d+/";
+        vm.formdisabled = true;
         vm.options = [
             {id:'x', value:"please Select"},
             {id:'ews', value:"EWS"},
