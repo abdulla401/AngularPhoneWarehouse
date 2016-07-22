@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-xs-12 archive-timepicker" ng-hide="displayOnly">
+        <div class="archive-timepicker__exclude">
+            <select ng-options="key as value for (key, value)  in dayOptions" ng-model="selectedDay"
+                    ng-change="changed()" class="form-control"></select>
+            </select>
+        </div>
+        <div class="archive-timepicker__from-label" translate="$I18N_ADMINISTRATION_MENU_BACKUP_RESTORE_FROM">
+            From
+        </div>
+        <div class="archive-timepicker__to">
+            <timepicker ng-model="fromTime" ng-change="changed()" hour-step="1" minute-step="1"
+                        show-meridian="false"></timepicker>
+        </div>
+        <div class="archive-timepicker__to-label" translate="$I18N_ADMINISTRATION_MENU_BACKUP_RESTORE_TO">
+            To:
+        </div>
+        <div class="archive-timepicker__from">
+            <timepicker ng-model="toTime" ng-change="changed()" hour-step="1" minute-step="1"
+                        show-meridian="false"></timepicker>
+        </div>
+        <div class="archive-timepicker__timezone">
+            <select mc-selectize-select-box ng-options="timezone as timezone for timezone in timezones"
+                    ng-model="timezone" ng-change="changed()"
+                    class="form-control"></select>
+            </select>
+        </div>
+
+        <div class="archive-timepicker__addbutton" style="float: left; padding-top:30px; padding-left: 20px">
+            <button type="button" class="btn btn-primary" ng-disabled="timePeriodValueValid"
+                    ng-click="addDuration()" translate="$I18N_ADMINISTRATION_MENU_BACKUP_RESTORE_PLUS_ADD">+ Add
+            </button>
+
+        </div>
+    </div>
+    <div class="col-xs-12 archive-timepicker-exclusions">
+        <div ng-repeat="exclusion in exclusions | orderBy: 'day'">
+            <div class="panel-half-padding-bottom archive-timepicker-exclusions__box">
+                <div class="archive-timepicker-exclusions__content bordered">
+                    <i class="fa fa-unlock archive-timepicker-exclusions__icon-border" ></i>
+                    <span class="text-success" translate="$I18N_ADMINISTRATION_MENU_BACKUP_RESTORE_ADDED"> -Added  </span> <span> {{dayOptions[exclusion.day]}}</span>
+                    <span> From </span>
+                    <span> {{exclusion.from}} </span> <span translate="$I18N_ADMINISTRATION_MENU_BACKUP_RESTORE_SMALL_TO"> to </span>
+                    <span>  {{exclusion.to}}</span>
+                    <span> {{exclusion.timezone}}</span>
+                </div>
+                <div class="archive-timepicker-exclusions__close">
+                    <a ng-click="remove(exclusion)">
+                        <i class="fa fa-crosshairs archive-timepicker-exclusions__icon-border"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

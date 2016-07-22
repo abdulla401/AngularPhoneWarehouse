@@ -1,5 +1,5 @@
 
-angular.module("components",['backuprestore.mk-select.directive'])
+angular.module("components",['backuprestore.mk-select.directive', 'backuprestore-time-duration.directive'])
     .config(['$stateProvider', function($stateProvider) {
         $stateProvider
             .state('components', {
